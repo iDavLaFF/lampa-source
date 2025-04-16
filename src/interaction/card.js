@@ -364,8 +364,7 @@ function Card(data, params = {}){
                 title: Lang.translate('title_'+m),
                 where: m,
                 picked: status[m],
-                collect: true,
-                noenter: !Account.hasPremium()
+                collect: true
             })
         })
 
@@ -442,20 +441,11 @@ function Card(data, params = {}){
             },
             onDraw: (item, elem)=>{
                 if(elem.collect){
-                    if(!Account.hasPremium()){
-                        let wrap = $('<div class="selectbox-item__lock"></div>')
-                            wrap.append(Template.js('icon_lock'))
+                    item.find('.selectbox-item__checkbox').remove()
 
-                        item.find('.selectbox-item__checkbox').remove()
-
-                        item.append(wrap)
-
-                        item.on('hover:enter',()=>{
-                            Select.close()
-
-                            Account.showCubPremium()
-                        })
-                    }
+                    item.on('hover:enter',()=>{
+                        Select.close()
+                    })
                 }
             }
         })
