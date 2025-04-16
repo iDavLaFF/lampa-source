@@ -123,34 +123,34 @@ Arrays.extend(window.lampa_settings,{
     socket_methods: true,
 
     account_use: true,
-    account_sync: true,
+    account_sync: false,
 
-    plugins_use: true,
-    plugins_store: true,
+    plugins_use: false,
+    plugins_store: false,
 
     torrents_use: navigator.userAgent.toLowerCase().indexOf("ipad") > -1 && window.innerWidth == 1920 && window.innerHeight == 1080 ? false : true,
     white_use: false,
 
     disable_features: {
-        dmca: false,
-        reactions: false,
-        discuss: false,
-        ai: false,
-        subscribe: false,
-        blacklist: false,
-        persons: false,
-        ads: false,
-        trailers: false,
+        dmca: true,
+        reactions: true,
+        discuss: true,
+        ai: true,
+        subscribe: true,
+        blacklist: true,
+        persons: true,
+        ads: true,
+        trailers: true,
         install_proxy: false
     },
 
-    lang_use: true,
+    lang_use: false,
 
     read_only: false,
 
     dcma: false,
 
-    push_state: true,
+    push_state: false,
 
     iptv: false,
 
